@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speaking | Grant Mercer</title>
+<meta name="description" content="Keynotes on change, trust, and decisions. Tailored to your room.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC;
+    --ink:#131313;
+    --stage:#0E0E0E;
+    --accent:#1F5FFF;
+    --paper-dim:#6F6A60;
+    --stage-dim:#9B968C;
+    --line:rgba(19,19,19,.14);
+    --line-dark:rgba(246,243,236,.16);
+    --max:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  .display{
+    font-family:"Archivo",sans-serif;
+    font-variation-settings:"wdth" 68;
+    font-weight:800;text-transform:uppercase;
+    letter-spacing:.005em;line-height:.92;
+  }
+  .kicker{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 110;
+    font-weight:600;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;
+  }
+  .kicker.accent{color:var(--accent)}
+
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:60;background:rgba(14,14,14,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark);
+  }
+  nav .logo{color:var(--paper)}
+  nav .nav-links a{color:var(--stage-dim)}
+  nav .nav-links a:hover{color:var(--paper)}
+  nav .nav-links .btn{background:var(--accent);border-color:var(--accent);color:#fff}
+  nav .nav-links .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 72;font-weight:800;text-transform:uppercase;font-size:19px;text-decoration:none;letter-spacing:.02em}
+  .logo b{color:var(--accent)}
+  .nav-links{display:flex;gap:26px;align-items:center;list-style:none}
+  .nav-links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--paper-dim);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-block;text-decoration:none;font-family:"Archivo",sans-serif;
+    font-variation-settings:"wdth" 100;font-weight:700;font-size:14px;letter-spacing:.06em;
+    text-transform:uppercase;padding:14px 28px;border:2px solid var(--ink);
+    background:var(--ink);color:var(--paper);transition:all .18s ease;cursor:pointer;
+  }
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+  .nav-links .btn{padding:10px 20px;font-size:12.5px}
+  @media(max-width:680px){.nav-links a:not(.btn){display:none}}
+
+  /* hero: full-bleed stage, speaker large, type overlapping */
+  .hero{
+    position:relative;background:var(--stage);color:var(--paper);
+    overflow:hidden;height:clamp(600px,82vh,740px);display:flex;align-items:center;
+  }
+  .hero-bg{position:absolute;top:0;right:0;bottom:0;width:60%}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
+  .hero-bg::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,var(--stage) 0%,rgba(14,14,14,.5) 34%,transparent 62%);
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(14,14,14,.25) 0%,transparent 30%,transparent 60%,rgba(14,14,14,.8) 100%);
+  }
+  .hero-content{position:relative;z-index:2;padding:64px 0 60px;max-width:660px}
+  .hero-tag{
+    position:absolute;right:26px;bottom:20px;z-index:2;color:var(--paper);
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
+    font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  }
+  .hero-tag b{color:var(--accent)}
+  .hero h1{font-size:clamp(46px,7.2vw,94px)}
+  .hero h1 .line{display:block}
+  .hero h1 .hollow{color:transparent;-webkit-text-stroke:2px var(--paper)}
+  .hero h1 .pop{color:var(--accent)}
+  .hero-kicker{display:flex;gap:14px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+  .hero-kicker .rule{height:2px;width:44px;background:var(--accent)}
+  .hero-sub{margin-top:22px;max-width:52ch;font-size:clamp(17px,1.9vw,19.5px);color:var(--stage-dim)}
+  .hero-sub strong{color:var(--paper)}
+  .hero-ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+  .hero .btn{background:var(--accent);border-color:var(--accent);color:#fff}
+  .hero .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+  .hero .btn-outline{background:transparent;border-color:var(--paper);color:var(--paper)}
+  .hero .btn-outline:hover{background:var(--paper);color:var(--ink)}
+  @media(max-width:860px){
+    .hero{height:auto;min-height:0}
+    .hero-bg{width:100%}
+    .hero-bg::before{background:linear-gradient(90deg,rgba(14,14,14,.88) 0%,rgba(14,14,14,.62) 55%,rgba(14,14,14,.4) 100%)}
+    .hero-content{padding:88px 0 72px}
+  }
+
+  /* showreel */
+  .reel{margin:72px auto 80px;position:relative}
+  .reel-frame{
+    position:relative;aspect-ratio:16/8.2;background:var(--stage);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .reel-frame .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .reel-frame .grain{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(14,14,14,.1), rgba(14,14,14,.35));
+  }
+  .play{
+    position:relative;z-index:2;width:92px;height:92px;border-radius:50%;
+    background:var(--accent);border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:transform .2s ease;
+  }
+  .play:hover{transform:scale(1.08)}
+  .play::after{
+    content:"";display:block;margin-left:6px;
+    border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;
+  }
+  .reel-caption{
+    display:flex;justify-content:space-between;gap:16px;padding:14px 2px;
+    font-size:13.5px;color:var(--paper-dim);border-bottom:1px solid var(--line);
+  }
+
+  /* proof bar */
+  .proof{background:var(--stage);color:var(--paper);overflow:hidden;padding:15px 0}
+  .proof-track{display:flex;gap:56px;align-items:center;white-space:nowrap;animation:tick 36s linear infinite;width:max-content}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.proof-track{animation:none}}
+  .proof span{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100;font-weight:600;
+    font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--stage-dim);
+  }
+  .proof b{color:var(--accent);font-weight:600;font-size:7px;line-height:1}
+
+  section{padding:104px 0}
+  .sec-head{margin-bottom:60px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(38px,6vw,72px);max-width:14ch}
+  .sec-head p{max-width:44ch;color:var(--paper-dim);padding-bottom:8px}
+
+  /* talks */
+  #talks{background:var(--stage);color:var(--paper)}
+  #talks .sec-head p{color:var(--stage-dim)}
+  .talk{border-top:1px solid var(--line-dark)}
+  .talk:last-child{border-bottom:1px solid var(--line-dark)}
+  .talk-head{
+    width:100%;background:none;border:none;color:inherit;cursor:pointer;text-align:left;
+    display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;
+    padding:30px 4px;font-family:inherit;
+  }
+  .talk-tag{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
+    font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    min-width:132px;
+  }
+  .talk-head h3{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 76;font-weight:700;
+    text-transform:uppercase;font-size:clamp(20px,3vw,32px);line-height:1.05;
+    transition:color .2s;
+  }
+  .talk-head:hover h3{color:var(--accent)}
+  .talk-x{
+    font-family:"Archivo",sans-serif;font-weight:300;font-size:34px;color:var(--stage-dim);
+    transition:transform .25s ease;line-height:1;
+  }
+  .talk.open .talk-x{transform:rotate(45deg);color:var(--accent)}
+  .talk-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+  .talk-inner{
+    display:grid;grid-template-columns:1.4fr 1fr;gap:48px;padding:6px 4px 42px;
+  }
+  @media(max-width:760px){
+    .talk-inner{grid-template-columns:1fr}
+    .talk-head{grid-template-columns:1fr auto}
+    .talk-tag{grid-column:1 / -1;min-width:0}
+  }
+  .talk-inner p{color:var(--stage-dim);font-size:16px}
+  .for-block{margin-top:22px}
+  .for-block p{color:var(--stage-dim);font-size:15px}
+  .for-block h4{margin-bottom:8px !important}
+  .takeaways h4,.for-block h4{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
+    font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);
+    margin-bottom:14px;
+  }
+  .takeaways ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .takeaways li{
+    font-size:15px;color:var(--stage-dim);padding-left:22px;position:relative;
+  }
+  .takeaways li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:2px;background:var(--accent)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:center}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}}
+  .portrait{aspect-ratio:4/5;background:var(--stage);position:relative;overflow:hidden}
+  .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .about-copy h2{font-size:clamp(36px,5vw,58px);margin-bottom:26px}
+  .about-copy p{color:var(--paper-dim);margin-bottom:18px;max-width:56ch}
+  .about-copy p b{color:var(--ink)}
+  .about-stats{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap}
+  .stat .display{font-size:36px;color:var(--accent)}
+  .stat small{font-size:13px;color:var(--paper-dim);letter-spacing:.04em}
+
+  /* testimonials */
+  #praise{background:var(--paper)}
+  .praise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.praise-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.praise-grid{grid-template-columns:1fr}}
+  .quote{
+    border:1px solid var(--line);padding:30px 28px;background:#fff;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .quote.lead{grid-column:span 2;background:var(--stage);color:var(--paper);border-color:var(--stage)}
+  @media(max-width:620px){.quote.lead{grid-column:span 1}}
+  .quote p{font-size:16.5px;line-height:1.55}
+  .quote.lead p{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 80;font-weight:700;
+    text-transform:uppercase;font-size:clamp(20px,2.6vw,28px);line-height:1.15;
+  }
+  .quote cite{font-style:normal;font-size:13.5px;color:var(--paper-dim);margin-top:auto}
+  .quote.lead cite{color:var(--stage-dim)}
+  .quote .mark{color:var(--accent);font-family:"Archivo",sans-serif;font-weight:800;font-size:28px;line-height:0.5}
+
+  /* clients */
+  #clients{background:var(--stage);color:var(--paper)}
+  #clients .sec-head p{color:var(--stage-dim)}
+  .logo-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line-dark);
+  }
+  @media(max-width:760px){.logo-grid{grid-template-columns:repeat(2,1fr)}}
+  .logo-cell{
+    border:1px solid var(--line-dark);padding:38px 20px;display:flex;align-items:center;justify-content:center;
+    color:var(--stage-dim);transition:color .2s;
+  }
+  .logo-cell:hover{color:var(--paper)}
+  .lw{font-family:"Archivo",sans-serif;text-transform:uppercase}
+  .lw1{font-variation-settings:"wdth" 62;font-weight:800;font-size:22px;letter-spacing:.02em}
+  .lw2{font-variation-settings:"wdth" 100;font-weight:400;font-size:19px;letter-spacing:.3em}
+  .lw3{font-variation-settings:"wdth" 110;font-weight:700;font-size:17px;letter-spacing:.12em}
+  .lw4{font-family:"Instrument Sans",sans-serif;font-weight:600;font-size:19px;text-transform:lowercase;letter-spacing:.01em}
+
+  /* booking */
+  #book-grant .sec-head{margin-bottom:40px}
+  .booking-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:72px}
+  @media(max-width:860px){.booking-grid{grid-template-columns:1fr;gap:40px}}
+  .booking-copy p{color:var(--paper-dim);max-width:44ch;margin-bottom:22px}
+  .booking-copy .direct{font-size:15px}
+  .booking-copy .direct a{font-weight:600;color:var(--ink)}
+  form{display:flex;flex-direction:column;gap:20px;background:#fff;border:1px solid var(--line);padding:34px 32px}
+  .field{display:flex;flex-direction:column;gap:7px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:560px){.field-row{grid-template-columns:1fr}}
+  label{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);
+  }
+  input,textarea{
+    font-family:inherit;font-size:16px;padding:14px 16px;background:var(--paper);
+    border:1px solid var(--line);color:var(--ink);width:100%;
+  }
+  input:hover,textarea:hover{border-color:var(--ink)}
+  textarea{resize:vertical;min-height:120px}
+  form .btn{align-self:stretch;text-align:center;margin-top:6px}
+  .form-note{font-size:13.5px;color:var(--paper-dim)}
+
+  footer{background:var(--stage);color:var(--stage-dim);padding:40px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px}
+  .foot-inner a{color:var(--paper);text-decoration:none}
+  .foot-inner a:hover{color:var(--accent)}
+
+  @media(max-width:480px){
+    .wrap{padding:0 20px}
+    section{padding:72px 0}
+    .hero{padding:56px 0 0}
+    .hero-ctas .btn{flex:1 1 100%;text-align:center}
+  }
+  .reel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+  .reel-head h2{font-size:clamp(32px,4.5vw,54px)}
+  .reel-head p{max-width:40ch;color:var(--paper-dim);padding-bottom:6px}
+  .next-steps{margin-top:30px;list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:13px}
+  .next-steps li{counter-increment:s;font-size:15px;color:var(--paper-dim);display:flex;gap:14px;align-items:baseline}
+  .next-steps li::before{
+    content:counter(s,decimal-leading-zero);font-family:"Archivo",sans-serif;font-weight:700;
+    color:var(--accent);font-size:12px;letter-spacing:.08em;
+  }
+  .demo-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:80;background:#101010;
+    border-top:2px solid #FF4A1C;display:flex;align-items:center;justify-content:center;
+    gap:22px;padding:12px 18px;flex-wrap:wrap;
+  }
+  .demo-bar span,.demo-bar a{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  }
+  .demo-bar span{color:#8b8577}
+  .demo-bar a{color:#F6F3EC}
+  .demo-bar a:hover{color:#FF4A1C}
+  .demo-bar a.get{color:#FF4A1C}
+  .demo-bar a.get:hover{color:#F6F3EC}
+  body{padding-bottom:52px}
+  .reel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+  .reel-head h2{font-size:clamp(32px,4.5vw,54px)}
+  .reel-head p{max-width:40ch;color:var(--paper-dim);padding-bottom:6px}
+  .next-steps{margin-top:30px;list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:13px}
+  .next-steps li{counter-increment:s;font-size:15px;color:var(--paper-dim);display:flex;gap:14px;align-items:baseline}
+  .next-steps li::before{
+    content:counter(s,decimal-leading-zero);font-family:"Archivo",sans-serif;font-weight:700;
+    color:var(--accent);font-size:12px;letter-spacing:.08em;
+  }
+  .demo-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:80;background:#101010;
+    border-top:2px solid #FF4A1C;display:flex;align-items:center;justify-content:center;
+    gap:22px;padding:12px 18px;flex-wrap:wrap;
+  }
+  .demo-bar span,.demo-bar a{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  }
+  .demo-bar span{color:#8b8577}
+  .demo-bar a{color:#F6F3EC}
+  .demo-bar a:hover{color:#FF4A1C}
+  .demo-bar a.get{color:#FF4A1C}
+  .demo-bar a.get:hover{color:#F6F3EC}
+  body{padding-bottom:52px}
+  .page-hero{background:var(--stage);color:var(--paper);padding:88px 0 60px}
+  .page-hero h1{font-size:clamp(44px,7vw,96px);margin-top:14px}
+  .page-hero .kicker{color:var(--accent)}
+  .cta-band{background:var(--stage);color:var(--paper);text-align:center;padding:112px 24px}
+  .cta-band .kicker{color:var(--accent)}
+  .cta-band p{color:var(--stage-dim);max-width:46ch;margin:18px auto 0;font-size:17px}
+  .cta-band .ctas{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+  .cta-band .band-mail{margin-top:24px;font-size:15px;color:var(--stage-dim)}
+  .cta-band .band-mail a{color:var(--paper);font-weight:600}
+  .cta-band .btn-outline{background:transparent;border-color:var(--paper);color:var(--paper)}
+  .cta-band .btn-outline:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+  .page-hero .ph-sub{margin-top:20px;max-width:54ch;color:var(--stage-dim);font-size:17.5px}
+  .page-hero .ph-ctas{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .page-hero .btn{background:var(--accent);border-color:var(--accent);color:#fff}
+  .page-hero .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+  .page-hero .btn-outline{background:transparent;border-color:var(--paper);color:var(--paper)}
+  .page-hero .btn-outline:hover{background:var(--paper);color:var(--ink)}
+  .tease-for{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-family:"Archivo",sans-serif;font-weight:600}
+  .cta-band h2{font-size:clamp(38px,5.5vw,72px);margin-top:16px}
+  .cta-band h2 span{color:var(--accent)}
+  .cta-band .btn{margin-top:32px;background:var(--accent);border-color:var(--accent);color:#fff}
+  .cta-band .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+  .tease-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.tease-grid{grid-template-columns:1fr}}
+  .tease{border:1px solid var(--line);background:#fff;padding:30px 28px;display:flex;flex-direction:column;gap:12px}
+  .tease .talk-tag{min-width:0}
+  .tease h3{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 76;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.05}
+  .tease p{font-size:15px;color:var(--paper-dim)}
+  .tease a{
+    margin-top:auto;font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100;font-weight:700;
+    font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--accent);
+  }
+  .tease a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">Grant Mercer<b>.</b></a>
+    <ul class="nav-links">
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="btn" href="contact.html">Book Grant</a></li>
+    </ul>
+  </div>
+</nav>
+<header class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Keynotes &amp; topics</span>
+    <h1 class="display">Talks built for <span style="color:var(--accent)">the room.</span></h1>
+    <p class="ph-sub">Three signature keynotes, each tailored to your audience, your moment, and what your people are actually facing.</p>
+    <div class="ph-ctas">
+      <a class="btn" href="contact.html">Book Grant</a>
+      <a class="btn btn-outline" href="#reel">▶&nbsp;&nbsp;Watch Grant speak</a>
+    </div>
+  </div>
+</header>
+<section id="topics">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="kicker accent">Topics</span>
+        <h2 class="display" style="margin-top:14px">Three ways in.</h2>
+      </div>
+      <p>Pick the door that fits your event. Every talk below expands with outcomes and fit.</p>
+    </div>
+    <div class="tease-grid rv">
+      <article class="tease">
+        <span class="talk-tag">Change</span>
+        <h3>Turning Change Into Momentum</h3>
+        <p>Name the dip, hold the standard, and convert uncertainty into forward motion.</p>
+        <p class="tease-for">Offsites · Transformations · Kickoffs</p>
+        <a href="#talks">Read the full keynote ↓</a>
+      </article>
+      <article class="tease">
+        <span class="talk-tag">Trust</span>
+        <h3>The Trust Dividend</h3>
+        <p>Where trust in a working team actually comes from, and the habits that rebuild it.</p>
+        <p class="tease-for">Exec teams · People leaders · Rebuilds</p>
+        <a href="#talks">Read the full keynote ↓</a>
+      </article>
+      <article class="tease">
+        <span class="talk-tag">Decisions</span>
+        <h3>Deciding at the Speed of Change</h3>
+        <p>A two-speed framework for deciding under pressure and staying aligned after the call.</p>
+        <p class="tease-for">Sales kickoffs · Operators · Scale-ups</p>
+        <a href="#talks">Read the full keynote ↓</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap reel rv" id="reel">
+  <div class="reel-head">
+    <div>
+      <span class="kicker accent">Showreel</span>
+      <h2 class="display" style="margin-top:12px">Watch Grant in action.</h2>
+    </div>
+    <p>Two minutes of Grant on stage. The fastest way to know if he's right for your room.</p>
+  </div>
+  <div class="reel-frame">
+    <img class="photo" src="/grant-tedx.webp" alt="Grant Mercer speaking at TEDx" style="object-position:center 22%">
+    <div class="grain"></div>
+    <button class="play" aria-label="Play showreel"></button>
+  </div>
+  <div class="reel-caption">
+    <span>Grant Mercer · Keynote showreel</span>
+    <span>2 minutes</span>
+  </div>
+</div>
+
+<section id="talks">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="kicker accent">Signature keynotes</span>
+        <h2 class="display" style="margin-top:14px">The full keynotes.</h2>
+      </div>
+      <p>Every keynote is tailored to your audience, your moment, and what your people are actually facing.</p>
+    </div>
+
+    <div class="talk rv open">
+      <button class="talk-head" aria-expanded="true">
+        <span class="talk-tag">Change</span>
+        <h3>Turning Change Into Momentum</h3>
+        <span class="talk-x">+</span>
+      </button>
+      <div class="talk-body">
+        <div class="talk-inner">
+          <div>
+            <p>Most change programs fail in the middle: after the announcement, before the payoff. Drawing on two decades of operating through mergers and pivots, Grant shows leaders how to name the dip, hold the standard, and convert uncertainty into forward motion.</p>
+            <div class="for-block"><h4>Ideal for</h4><p>Leadership offsites &nbsp;·&nbsp; Companies mid-transformation &nbsp;·&nbsp; Annual kickoffs after a hard year</p></div>
+          </div>
+          <div class="takeaways">
+            <h4>Your audience leaves with</h4>
+            <ul>
+              <li>A map of the messy middle and how to lead it</li>
+              <li>Language that steadies teams in uncertainty</li>
+              <li>Three moves that turn resistance into buy-in</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk rv">
+      <button class="talk-head" aria-expanded="false">
+        <span class="talk-tag">Trust</span>
+        <h3>The Trust Dividend</h3>
+        <span class="talk-x">+</span>
+      </button>
+      <div class="talk-body">
+        <div class="talk-inner">
+          <div>
+            <p>Teams with high trust move faster, argue better, and stay longer. Grant breaks down where trust actually comes from in a working team, why it collapses quietly, and the specific habits leaders can start this quarter to rebuild it.</p>
+            <div class="for-block"><h4>Ideal for</h4><p>Executive teams &nbsp;·&nbsp; People-leader summits &nbsp;·&nbsp; Organizations rebuilding after layoffs</p></div>
+          </div>
+          <div class="takeaways">
+            <h4>Your audience leaves with</h4>
+            <ul>
+              <li>The four behaviors that compound into trust</li>
+              <li>A diagnostic for where their team leaks it</li>
+              <li>One meeting change that pays off in weeks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk rv">
+      <button class="talk-head" aria-expanded="false">
+        <span class="talk-tag">Decisions</span>
+        <h3>Deciding at the Speed of Change</h3>
+        <span class="talk-x">+</span>
+      </button>
+      <div class="talk-body">
+        <div class="talk-inner">
+          <div>
+            <p>Slow decisions cost more than wrong ones. Grant gives leaders a working framework for deciding under uncertainty: what to decide fast, what to decide slow, and how to keep a team aligned after the call is made.</p>
+            <div class="for-block"><h4>Ideal for</h4><p>Sales kickoffs &nbsp;·&nbsp; Operator conferences &nbsp;·&nbsp; Fast-growing companies drowning in process</p></div>
+          </div>
+          <div class="takeaways">
+            <h4>Your audience leaves with</h4>
+            <ul>
+              <li>A two-speed model for decisions under pressure</li>
+              <li>How to disagree and commit without resentment</li>
+              <li>A playbook for communicating the call</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="praise">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="kicker accent">Testimonials</span>
+        <h2 class="display" style="margin-top:14px">What rooms say after.</h2>
+      </div>
+    </div>
+    <div class="praise-grid">
+      <figure class="quote lead rv">
+        <span class="mark">"</span>
+        <p>The rare keynote people were still quoting a month later.</p>
+        <cite>Head of People, national logistics company</cite>
+      </figure>
+      <figure class="quote rv">
+        <span class="mark">"</span>
+        <p>Grant read our situation better than some of our own execs. The room went quiet in the good way.</p>
+        <cite>Conference Chair, industry leadership summit</cite>
+      </figure>
+      <figure class="quote rv">
+        <span class="mark">"</span>
+        <p>Practical from the first minute. Our leaders left with things to do, not just things to feel.</p>
+        <cite>VP Learning &amp; Development, insurance group</cite>
+      </figure>
+      <figure class="quote rv">
+        <span class="mark">"</span>
+        <p>We booked him for the offsite and rebooked him for the kickoff before he left the building.</p>
+        <cite>Chief Operating Officer, software company</cite>
+      </figure>
+      <figure class="quote rv">
+        <span class="mark">"</span>
+        <p>Exactly what a room full of skeptical engineers needed. No fluff, all signal.</p>
+        <cite>Event Lead, engineering conference</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+<section id="clients">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="kicker accent">Selected clients</span>
+        <h2 class="display" style="margin-top:14px">Rooms he's worked.</h2>
+      </div>
+    </div>
+    <div class="logo-grid rv">
+      <div class="logo-cell"><span class="lw lw1">Northwind</span></div>
+      <div class="logo-cell"><span class="lw lw2">Meridian</span></div>
+      <div class="logo-cell"><span class="lw lw3">Halcyon Group</span></div>
+      <div class="logo-cell"><span class="lw lw4">latitude&amp;co</span></div>
+      <div class="logo-cell"><span class="lw lw3">Beacon Health</span></div>
+      <div class="logo-cell"><span class="lw lw1">Argent</span></div>
+      <div class="logo-cell"><span class="lw lw4">fairview</span></div>
+      <div class="logo-cell"><span class="lw lw2">Vantage</span></div>
+    </div>
+  </div>
+</section>
+<section class="cta-band">
+  <span class="kicker">Check availability</span>
+  <h2 class="display">Bring Grant to <span>your stage.</span></h2>
+  <p>Tell us about your event and get availability, fees, and next steps within one business day.</p>
+  <div class="ctas">
+    <a class="btn" href="contact.html">Book Grant</a>
+  </div>
+  <p class="band-mail">Prefer email? <a href="mailto:booking@grantmercer.com">booking@grantmercer.com</a></p>
+</section>
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Grant Mercer · Demo site with sample content</span>
+    <span><a href="index.html">Home</a> · <a href="speaking.html">Speaking</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></span>
+    <span>Site by <a href="https://keynotesites.com/">KeynoteSites</a></span>
+  </div>
+</footer>
+<div class="demo-bar">
+  <span>KeynoteSites example</span>
+  <a class="get" href="https://keynotesites.com/#pricing">Get a site like this · from $499 →</a>
+  <a href="https://keynotesites.com/">Back to KeynoteSites</a>
+</div>
+
+<script>
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  document.querySelectorAll('.talk').forEach(talk => {
+    const head = talk.querySelector('.talk-head');
+    const body = talk.querySelector('.talk-body');
+    const setOpen = open => {
+      talk.classList.toggle('open', open);
+      head.setAttribute('aria-expanded', open);
+      body.style.maxHeight = open ? body.scrollHeight + 'px' : '0px';
+    };
+    head.addEventListener('click', () => setOpen(!talk.classList.contains('open')));
+    if (talk.classList.contains('open')) setOpen(true);
+  });
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.talk.open .talk-body').forEach(b => b.style.maxHeight = b.scrollHeight + 'px');
+  });
+
+  const bf = document.getElementById('booking-form');
+  if (bf) bf.addEventListener('submit', e => {
+    e.preventDefault();
+    bf.innerHTML = '<p style="font-size:18px"><strong>Thanks! Your inquiry is in.</strong><br>Expect a reply within one business day.</p>';
+  });
+</script>
+</body>
+</html>
