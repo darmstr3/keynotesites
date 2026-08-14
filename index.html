@@ -108,7 +108,7 @@
   .anatomy{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:start}
   @media(max-width:860px){
     .anatomy{grid-template-columns:1fr}
-    .schematic{position:static;top:auto;margin-bottom:8px}
+    .anatomy .schematic{position:static;top:auto;margin-bottom:8px}
   }
   .schematic{border:1px solid var(--line);background:var(--stage-2);padding:18px;position:sticky;top:96px}
   .schematic ol{list-style:none;display:flex;flex-direction:column;gap:8px}
@@ -228,7 +228,7 @@
     .hero{padding:40px 0 40px}
     .hero-kicker{margin-bottom:14px;gap:10px}
     .hero-kicker .kicker{font-size:11px;letter-spacing:.16em}
-    .hero h1{font-size:clamp(32px,10.5vw,88px)}
+    .hero h1{font-size:32px}
     .hero-sub{font-size:15.5px;line-height:1.5;margin-top:14px}
     .hero-ctas{gap:10px;margin-top:20px}
     .hero-ctas .btn{flex:1 1 100%;text-align:center;padding:15px 24px;font-size:13px}
