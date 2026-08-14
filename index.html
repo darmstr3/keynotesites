@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KeynoteSites | Speaker websites that get you booked. Live in 3 days.</title>
-<meta name="description" content="Booking-ready speaker websites built from your talks, proof, and showreel. Live in 3 business days. Founding price $499.">
-<meta property="og:title" content="KeynoteSites | Speaker websites that get you booked">
-<meta property="og:description" content="Booking-ready speaker websites. Live in 3 business days. From $499.">
+<title>Speaker Website Redesign | Keynote Sites</title>
+<meta name="description" content="A full redesign and rebuild of your existing speaker website. Custom-coded, off the page builder, $2,000 flat.">
+<meta property="og:title" content="Speaker Website Redesign | Keynote Sites">
+<meta property="og:description" content="A full redesign and rebuild of your existing speaker website. $2,000 flat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
@@ -46,7 +46,6 @@
   .rv.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
-  /* nav */
   nav{
     position:sticky;top:0;z-index:60;background:rgba(16,16,16,.9);
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
@@ -71,7 +70,6 @@
   .nav-links .btn{padding:10px 20px;font-size:12.5px}
   @media(max-width:680px){.nav-links a:not(.btn){display:none}}
 
-  /* hero */
   .hero{padding:52px 0 72px;position:relative;overflow:hidden}
   .hero::before{
     content:"";position:absolute;inset:0;pointer-events:none;
@@ -79,7 +77,7 @@
   }
   .hero-kicker{display:flex;gap:14px;align-items:center;margin-bottom:22px}
   .hero-kicker .rule{height:2px;width:44px;background:var(--accent)}
-  .hero h1{font-size:clamp(46px,8.6vw,104px);position:relative}
+  .hero h1{font-size:clamp(40px,7.6vw,88px);position:relative}
   .hero h1 .line{display:block}
   .hero h1 .hollow{color:transparent;-webkit-text-stroke:2px var(--paper)}
   .hero h1 .pop{color:var(--accent)}
@@ -89,23 +87,11 @@
   .hero-note{margin-top:18px;font-size:14.5px;color:var(--dim)}
   .hero-note b{color:var(--accent);font-weight:600}
 
-  /* ticker */
-  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:14px 0;background:var(--stage-2)}
-  .ticker-track{display:flex;gap:56px;align-items:center;white-space:nowrap;animation:tick 36s linear infinite;width:max-content}
-  @keyframes tick{to{transform:translateX(-50%)}}
-  @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
-  .ticker span{
-    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100;font-weight:600;
-    font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
-  }
-  .ticker b{color:var(--accent);font-size:7px;line-height:1}
-
   section{padding:100px 0;border-bottom:1px solid var(--line)}
   .sec-head{margin-bottom:52px}
-  .sec-head h2{font-size:clamp(36px,5.5vw,64px);max-width:16ch;margin-top:14px}
+  .sec-head h2{font-size:clamp(34px,5vw,58px);max-width:18ch;margin-top:14px}
   .sec-head p{max-width:58ch;color:var(--dim);margin-top:18px;font-size:17.5px}
 
-  /* problem */
   .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
   .problem-grid article{background:var(--stage);padding:34px 28px}
   .problem-grid h3{
@@ -114,8 +100,9 @@
   }
   .problem-grid p{font-size:16px;color:var(--dim);line-height:1.65}
   @media(max-width:820px){.problem-grid{grid-template-columns:1fr}}
+  .stakes-line{margin-top:36px;padding-top:36px;border-top:1px solid var(--line);font-size:19px;line-height:1.6;max-width:70ch}
+  .stakes-line b{color:var(--accent)}
 
-  /* anatomy */
   .anatomy{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:start}
   @media(max-width:860px){.anatomy{grid-template-columns:1fr}}
   .schematic{border:1px solid var(--line);background:var(--stage-2);padding:18px;position:sticky;top:96px}
@@ -123,9 +110,7 @@
   .schematic li{
     border:1px solid var(--line);padding:12px 14px;font-size:14px;
     display:flex;justify-content:space-between;gap:12px;align-items:baseline;
-    transition:border-color .35s,background .35s;
   }
-  .schematic li.active{border-color:var(--accent);background:rgba(255,74,28,.07)}
   .schematic li:first-child{padding:20px 14px}
   .schematic li small{font-size:11px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
   .anatomy-copy h3{
@@ -135,7 +120,6 @@
   .anatomy-copy h3:first-child{margin-top:0}
   .anatomy-copy p{color:var(--dim);font-size:16px;max-width:56ch}
 
-  /* process */
   .ros{border:1px solid var(--line)}
   .ros-row{display:grid;grid-template-columns:170px 1fr;gap:32px;padding:34px 36px;border-bottom:1px solid var(--line)}
   .ros-row:last-child{border-bottom:none}
@@ -151,88 +135,56 @@
   .ros-row p{color:var(--dim);font-size:16px;max-width:60ch}
   @media(max-width:640px){.ros-row{grid-template-columns:1fr;gap:8px;padding:26px 22px}}
 
-  /* pricing */
-  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
-  @media(max-width:820px){.price-grid{grid-template-columns:1fr}}
-  .price-card{border:1px solid var(--line);padding:40px 36px;background:var(--stage-2);display:flex;flex-direction:column;position:relative}
-  .price-card.featured{border-color:var(--accent)}
-  .founding-tag{
-    position:absolute;top:-14px;left:32px;background:var(--accent);color:#fff;
-    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:700;
-    font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;
-  }
+  .price-grid{display:grid;grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .price-card{border:1px solid var(--accent);padding:44px 40px;background:var(--stage-2);display:flex;flex-direction:column;position:relative}
   .price-card h3{
     font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 78;font-weight:700;
     text-transform:uppercase;font-size:22px;
   }
   .price-line{margin:20px 0 4px;display:flex;align-items:baseline;gap:14px}
-  .price-line .now{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 70;font-weight:800;font-size:56px;letter-spacing:-.01em}
-  .price-line .was{font-size:16px;color:var(--dim);text-decoration:line-through}
+  .price-line .now{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 70;font-weight:800;font-size:64px;letter-spacing:-.01em}
   .price-was-note{font-size:13px;color:var(--dim);margin-bottom:24px}
   .price-card ul{list-style:none;margin:8px 0 32px;display:flex;flex-direction:column;gap:12px}
   .price-card li{font-size:15.5px;padding-left:24px;position:relative;line-height:1.55}
-  .best-for{
-    margin:14px 0 4px;font-size:15px;color:var(--dim);line-height:1.55;
-    border-left:2px solid var(--accent);padding-left:14px;max-width:44ch;
-  }
-  .best-for b{
-    display:block;font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;
-    font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:3px;
-  }
   .price-card li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:2px;background:var(--accent)}
   .price-card li.soft{color:var(--dim)}
-  .price-card .btn{margin-top:auto;text-align:center}
+  .price-card .btn{text-align:center}
+  .price-card .btn-outline{margin-top:14px}
+  .price-card .deposit-note{margin-top:18px;font-size:13.5px;color:var(--dim);text-align:center}
+  .list-label{
+    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:700;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:22px 0 10px;
+  }
+  .price-card ul.not-included{margin-top:0;margin-bottom:28px;gap:10px}
+  .price-card ul.not-included li{color:var(--dim);font-size:15px}
+  .price-card ul.not-included li::before{background:var(--dim)}
+  .proof-strip{
+    display:grid;grid-template-columns:1fr 1.5fr;gap:40px;margin-bottom:48px;
+    padding-bottom:48px;border-bottom:1px solid var(--line);
+  }
+  .proof-strip p{color:var(--dim);font-size:16px;line-height:1.6}
+  .proof-link{color:var(--accent);font-weight:600;text-decoration:none}
+  .proof-link:hover{text-decoration:underline}
+  @media(max-width:820px){.proof-strip{grid-template-columns:1fr;gap:24px}}
   .care-plan{
     margin-top:24px;border:1px dashed var(--line);padding:22px 28px;
     display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;justify-content:space-between;
+    max-width:520px;margin-left:auto;margin-right:auto;
   }
   .care-plan p{font-size:15.5px;color:var(--dim);max-width:58ch}
   .care-plan p b{color:var(--paper)}
   .care-plan .tag{font-family:"Archivo",sans-serif;font-weight:700;font-size:14px;color:var(--accent);white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}
 
-  /* mockup devices: live scaled previews of the example site */
-  .mockups{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;margin:10px 0 28px}
-  @media(max-width:760px){.mockups{grid-template-columns:1fr}}
-  .device .device-cta{display:block;text-align:center}
-  .device{border:1px solid var(--line);background:var(--stage-2)}
-  .device-bar{
-    display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;
-    border-bottom:1px solid var(--line);
-    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105;font-weight:600;
-    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);
-  }
-  .device-bar i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
-  .device-screen{position:relative;overflow:hidden}
-  .laptop .device-screen{aspect-ratio:1440/880}
-  .phone .device-screen{aspect-ratio:390/760}
-  .device-screen iframe{position:absolute;top:0;left:0;border:0;pointer-events:none;transform-origin:top left;background:#F6F3EC}
-
-  /* example */
-  #example .ex-frame{
-    border:1px solid var(--line);background:var(--stage-2);padding:56px 40px;text-align:center;
-  }
-  #example .ex-frame h3{
-    font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 70;font-weight:800;
-    text-transform:uppercase;font-size:clamp(28px,4.5vw,48px);line-height:.95;
-  }
-  #example .ex-frame h3 span{color:var(--accent)}
-  #example .ex-frame p{color:var(--dim);max-width:52ch;margin:18px auto 32px;font-size:17px}
-  #example .ex-frame .btn{padding:19px 46px;font-size:15.5px}
-  #example .ex-note{font-size:13.5px;margin:14px auto 0;color:var(--dim)}
-
-  /* founder */
   .note{max-width:780px;border-left:4px solid var(--accent);padding-left:clamp(22px,4vw,40px)}
   .note .kicker{display:block;margin-bottom:20px}
   .note blockquote{
     font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 76;font-weight:700;
-    text-transform:uppercase;font-size:clamp(22px,3.2vw,36px);line-height:1.12;
+    text-transform:uppercase;font-size:clamp(20px,3vw,32px);line-height:1.16;
   }
-  .note blockquote span{color:var(--accent);display:block;margin:18px 0;font-size:1.12em}
+  .note blockquote span{color:var(--accent);display:block;margin:18px 0;font-size:1.1em}
   .note figcaption{margin-top:26px;color:var(--dim);font-size:15.5px}
   .note figcaption b{color:var(--paper);font-weight:600}
 
-  /* faq */
   .faq{max-width:760px}
   .faq details{border-bottom:1px solid var(--line)}
   .faq summary{
@@ -244,13 +196,12 @@
   .faq details[open] summary::after{transform:rotate(45deg)}
   .faq details p{padding:0 0 28px;color:var(--dim);font-size:16px;max-width:60ch}
 
-  /* finale */
   .finale{text-align:center;padding:130px 24px;position:relative;overflow:hidden;border-bottom:none}
   .finale::before{
     content:"";position:absolute;inset:0;pointer-events:none;
     background:radial-gradient(ellipse 55% 45% at 50% 100%, rgba(255,74,28,.16), transparent 70%);
   }
-  .finale h2{font-size:clamp(48px,9vw,110px)}
+  .finale h2{font-size:clamp(42px,7.5vw,88px)}
   .finale h2 span{color:var(--accent)}
   .finale p{margin:24px auto 0;color:var(--dim);max-width:46ch}
   .finale .hero-ctas{justify-content:center}
@@ -258,7 +209,6 @@
   footer{border-top:1px solid var(--line);padding:34px 0;background:var(--stage-2)}
   .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;font-size:13.5px;color:var(--dim)}
 
-  /* mobile refinements */
   @media(max-width:480px){
     .wrap{padding:0 20px}
     section{padding:72px 0}
@@ -268,9 +218,6 @@
     .sec-head{margin-bottom:40px}
     .problem-grid article{padding:28px 22px}
     .price-card{padding:32px 22px}
-    .founding-tag{left:22px}
-    #example .ex-frame{padding:44px 22px}
-    #example .ex-frame .btn{width:100%;padding:18px 24px}
     .note{padding-left:20px}
     .finale{padding:96px 20px}
     .finale .hero-ctas .btn{flex:1 1 100%}
@@ -284,11 +231,10 @@
   <div class="wrap nav-inner">
     <a class="logo" href="#top">KeynoteSites<b>.</b></a>
     <ul class="nav-links">
-      <li><a href="#anatomy">What You Get</a></li>
+      <li><a href="#anatomy">What's Included</a></li>
       <li><a href="#process">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#example">Example</a></li>
-      <li><a class="btn" href="#pricing">Start your site</a></li>
+      <li><a class="btn" href="#pricing">Check Fit</a></li>
     </ul>
   </div>
 </nav>
@@ -297,77 +243,46 @@
   <div class="wrap">
     <div class="hero-kicker rv">
       <span class="rule"></span>
-      <span class="kicker">Websites for professional speakers</span>
+      <span class="kicker">Redesigns for speakers who already have a site</span>
     </div>
     <h1 class="display rv">
-      <span class="line">The website</span>
-      <span class="line hollow">that gets you</span>
-      <span class="line">booked<span class="pop">.</span></span>
+      <span class="line">Your site hasn't</span>
+      <span class="line hollow">caught up to</span>
+      <span class="line">your career<span class="pop">.</span></span>
     </h1>
-    <p class="hero-sub rv">Your talks, your testimonials, your showreel, shaped into a booking-ready site by a designer who has spent years building for speakers. <strong>Live in 3 business days.</strong></p>
+    <p class="hero-sub rv">A full redesign and rebuild of the site you already have, custom-coded, off whatever page builder it's stuck on now, built to match where your speaking business actually is today. <strong>$2,000 flat.</strong></p>
     <div class="hero-ctas rv">
-      <a class="btn btn-accent" href="#pricing">Start your site</a>
-      <a class="btn btn-outline" href="#example">View the example</a>
+      <a class="btn btn-accent" href="#pricing">See If You're a Fit</a>
+      <a class="btn btn-outline" href="https://buy.stripe.com/14A5kD1U46w5dRfgIMcV204">Skip It, Start My Redesign</a>
     </div>
-    <p class="hero-note rv">Founding price <b>$499</b> for the first 5 speakers · then $999</p>
+    <p class="hero-note rv">A 2-minute fit check, not a sales pitch. Or skip it and start now.</p>
   </div>
 </header>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>Showreel hero</span><b>●</b><span>Keynotes</span><b>●</b><span>Testimonials</span><b>●</b><span>Client logos</span><b>●</b><span>Booking CTA</span><b>●</b><span>Your domain</span><b>●</b><span>Hosting included</span><b>●</b><span>Live in 3 days</span><b>●</b>
-    <span>Showreel hero</span><b>●</b><span>Keynotes</span><b>●</b><span>Testimonials</span><b>●</b><span>Client logos</span><b>●</b><span>Booking CTA</span><b>●</b><span>Your domain</span><b>●</b><span>Hosting included</span><b>●</b><span>Live in 3 days</span><b>●</b>
-  </div>
-</div>
-
-<section id="example">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div>
-        <span class="kicker">The work</span>
-        <h2 class="display">See it before you buy it.</h2>
-      </div>
-      <p>Both packages as live previews you can scroll, not screenshots. Your content and brand, same quality bar.</p>
-    </div>
-    <div class="mockups rv">
-      <figure class="device laptop">
-        <figcaption class="device-bar"><i></i>The One-Pager · $499</figcaption>
-        <div class="device-screen"><iframe src="/example/grant-mercer" data-w="1440" data-h="880" style="width:1440px;height:880px" loading="lazy" tabindex="-1" title="One-Pager example, live preview" scrolling="no"></iframe></div>
-        <a class="btn btn-accent device-cta" href="/example/grant-mercer">View the One-Pager</a>
-      </figure>
-      <figure class="device laptop">
-        <figcaption class="device-bar"><i></i>The Full Site · $1,299</figcaption>
-        <div class="device-screen"><iframe src="/example/grant-mercer-full/" data-w="1440" data-h="880" style="width:1440px;height:880px" loading="lazy" tabindex="-1" title="Full Site example, live preview" scrolling="no"></iframe></div>
-        <a class="btn btn-outline device-cta" href="/example/grant-mercer-full/">View the Full Site</a>
-      </figure>
-    </div>
-    <p class="ex-note" style="text-align:center">Both open in this tab. Scroll them, tap them, judge them.</p>
-  </div>
-</section>
 
 <section id="problem">
   <div class="wrap">
     <div class="sec-head rv">
       <div>
         <span class="kicker">The problem</span>
-        <h2 class="display">Planners decide in about 90 seconds.</h2>
+        <h2 class="display">Nothing's technically wrong. It just doesn't look like you anymore.</h2>
       </div>
-      <p>Before anyone books you, someone checks your website. Most speaker sites lose the booking in three ways:</p>
+      <p>New book, new reel, new stage, new positioning, and the website's still running the version from a few years ago. Three ways that shows up:</p>
     </div>
     <div class="problem-grid rv">
       <article>
-        <h3>The showreel is buried</h3>
-        <p>Video is the first thing a planner looks for and the last thing most sites deliver. If they can't watch you speak in one scroll, they move to the next name on their list.</p>
+        <h3>It's stuck on a page builder</h3>
+        <p>Squarespace, Wix, whatever it was set up on originally, paying a monthly fee for something that's slow to update and looks like everyone else's site on the same platform.</p>
       </article>
       <article>
-        <h3>The talks read like course catalogs</h3>
-        <p>Keynote descriptions written for you, not for the person hiring you. Planners need titles, outcomes, and who it's for. In seconds, not paragraphs.</p>
+        <h3>It doesn't match your current proof</h3>
+        <p>New testimonials, new media hits, a new reel, none of it made it onto the site. A planner checking you out right now is seeing an old version of your career.</p>
       </article>
       <article>
-        <h3>Booking takes work</h3>
-        <p>A 12-field form, a dead email link, or no clear next step at all. Every extra click between "impressed" and "inquired" costs you real gigs.</p>
+        <h3>You don't want to touch it yourself</h3>
+        <p>You know it needs work. You don't have the time, the tools, or honestly the interest to relearn a website builder to fix it.</p>
       </article>
     </div>
+    <p class="stakes-line rv">Every planner who checks you out while it looks like this is judging your current career against an old version of it. <b>Your site hasn't caught up to your career, that's the actual gap this closes.</b></p>
   </div>
 </section>
 
@@ -375,34 +290,32 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <span class="kicker">What you get</span>
-        <h2 class="display">One page. Everything a planner needs to say yes.</h2>
+        <span class="kicker">What's included</span>
+        <h2 class="display">A full rebuild, not a patch job.</h2>
       </div>
-      <p>Built on a design system refined across real speaker sites, then filled with your talks, your proof, your voice.</p>
+      <p>Custom-coded from scratch on modern infrastructure, not a template, not a page-builder theme. Your existing content carried over and reshaped, not rewritten from nothing.</p>
     </div>
     <div class="anatomy">
-      <figure class="schematic rv" aria-label="The seven sections of your speaker site">
+      <figure class="schematic rv" aria-label="What's in scope">
         <ol id="schematic-list">
-          <li><strong>Hero + Showreel</strong><small>yourname.com</small></li>
-          <li>Positioning &amp; Headline<small>01</small></li>
-          <li>Keynotes<small>02</small></li>
-          <li>About / Bio<small>03</small></li>
-          <li>Testimonials<small>04</small></li>
-          <li>Client Logos<small>05</small></li>
-          <li>Booking CTA + Contact<small>06</small></li>
+          <li><strong>Full redesign</strong><small>custom-coded</small></li>
+          <li>Up to 5 pages<small>01</small></li>
+          <li>Content migration<small>02</small></li>
+          <li>Inquiry form<small>03</small></li>
+          <li>Analytics + technical SEO<small>04</small></li>
+          <li>Domain + SSL connected<small>05</small></li>
+          <li>Two revision rounds<small>06</small></li>
         </ol>
       </figure>
       <div class="anatomy-copy rv">
-        <h3>Copy shaped from your materials</h3>
-        <p>You fill out one structured intake: bio, talks, testimonials, links. I shape it into tight, booking-focused copy. You approve every word.</p>
-        <h3>Fast, mobile-first, findable</h3>
-        <p>Built to load instantly and look right on every phone a planner is holding. SEO basics included: metadata, social preview cards, speaker schema markup, analytics installed.</p>
-        <h3>Your domain, hosting included</h3>
-        <p>Connected to the domain you own and hosted on modern infrastructure at no extra charge. No platform subscription holding your site hostage.</p>
-        <h3>One clean revision round</h3>
-        <p>You review the preview and send one consolidated list of changes. I make all of them. That constraint is how this costs $499 instead of $5,000, and ships in days instead of months.</p>
-        <h3>Already have a site?</h3>
-        <p>Even better. Your content is ready, which makes the build faster. I replace the old site and set up redirects so you keep your Google standing.</p>
+        <h3>Off the page builder, for good</h3>
+        <p>Custom code instead of Wix or Squarespace means no monthly platform fee, faster load times, and a design that isn't boxed in by a theme. Practically: your site loads faster, looks less like a template, and stops costing you a subscription.</p>
+        <h3>Your content, reshaped</h3>
+        <p>Bio, talks, testimonials, photos, video links, whatever's already on your current site plus anything new since. I shape it into tight, planner-focused copy. You approve every word.</p>
+        <h3>Two consolidated revision rounds</h3>
+        <p>You review the preview and send one list of changes, then a second if needed. That's what keeps this $2,000 and fast instead of open-ended.</p>
+        <h3>Hosting included for a year</h3>
+        <p>Hosting's covered for the first 12 months. After that it's $149/yr, stated up front, cancel or move it elsewhere any time, it's your site.</p>
       </div>
     </div>
   </div>
@@ -413,30 +326,30 @@
     <div class="sec-head rv">
       <div>
         <span class="kicker">How it works</span>
-        <h2 class="display">Live in three business days.</h2>
+        <h2 class="display">Live in about 7-10 business days.</h2>
       </div>
-      <p>The clock starts the moment your intake is complete.</p>
+      <p>The clock starts once your assets and content are in.</p>
     </div>
     <div class="ros rv">
       <div class="ros-row">
-        <div class="ros-when">Day 0 · Kickoff</div>
+        <div class="ros-when">Step 1 · Kickoff</div>
         <div>
-          <h3>Pay, then tell me about your speaking</h3>
-          <p>Checkout takes a minute. The intake takes about 25: your bio, talks, testimonials, photos, video links, and the domain you own. That's the last heavy lift you do.</p>
+          <h3>A short fit check, or skip straight to the deposit</h3>
+          <p>Optional 2-minute fit check to confirm this is the right scope for your site, not a sales pitch. Either way, we start with a 50% deposit and a short intake covering your current site, new content, and anything that's changed since it was built.</p>
         </div>
       </div>
       <div class="ros-row">
-        <div class="ros-when">Days 1 &amp; 2 · Build</div>
+        <div class="ros-when">Days 1-7-ish · Build</div>
         <div>
-          <h3>I shape the copy and build the site</h3>
-          <p>Your materials go through the design system. Copy tightened for planners, images optimized, showreel front and center. You get a private preview link and send one consolidated round of changes.</p>
+          <h3>I rebuild and migrate the site</h3>
+          <p>Your content goes through a full redesign, custom-coded, no page-builder dependency. You get a private preview link and two consolidated rounds of changes.</p>
         </div>
       </div>
       <div class="ros-row">
-        <div class="ros-when">Day 3 · Launch</div>
+        <div class="ros-when">Final step · Launch</div>
         <div>
-          <h3>Your domain connects. You're live.</h3>
-          <p>Revisions in, domain connected, analytics running. You get a handoff note covering how future edits work, and you go back to booking gigs.</p>
+          <h3>Domain connects, old site retired, final 50% due</h3>
+          <p>Redirects set up so your Google standing carries over, analytics running, and you get a short handoff note on how future edits work.</p>
         </div>
       </div>
     </div>
@@ -448,47 +361,52 @@
     <div class="sec-head rv">
       <div>
         <span class="kicker">Pricing</span>
-        <h2 class="display">Founding pricing. First 5 speakers.</h2>
+        <h2 class="display">One offer. One price.</h2>
       </div>
-      <p>These were $999 to $2,499 as one-off custom projects. Same designer, systemized process. Founding customers get the difference in exchange for a testimonial.</p>
+      <p>No package matrix, no design-system menu. If your project genuinely needs more than this scope, that's a separate conversation, not a hidden upsell.</p>
+    </div>
+    <div class="proof-strip rv">
+      <div>
+        <p class="list-label" style="margin-top:0">See the quality bar</p>
+        <p>Not a mockup, a live example you can scroll and tap: <a class="proof-link" href="/example/grant-mercer-full/" target="_blank" rel="noopener">view a real Keynote Sites build →</a></p>
+      </div>
+      <div>
+        <p class="list-label" style="margin-top:0">Track record</p>
+        <p>This is the same design work I've sold as one-off custom projects for $999–$2,499. This offer systemizes it into a fixed $2,000 rebuild, same quality bar, no custom quote required.</p>
+      </div>
     </div>
     <div class="price-grid">
-      <div class="price-card featured rv">
-        <span class="founding-tag">Founding · 5 spots</span>
-        <h3>The One-Pager</h3>
-        <div class="price-line"><span class="now">$499</span><span class="was">$999</span></div>
-        <p class="price-was-note">My old price for custom one-pagers.</p>
-        <p class="best-for"><b>Best for</b>Speakers who want one focused, high-converting page with everything a planner needs to book you.</p>
-        <ul>
-          <li>Booking-ready one-page site, 7 sections</li>
-          <li>Copy shaped from your materials</li>
-          <li>Showreel hero, keynotes, testimonials, logos</li>
-          <li>SEO basics, analytics, social cards</li>
-          <li>Your domain connected · hosting included</li>
-          <li>One consolidated revision round</li>
-          <li>Live in 3 business days</li>
-        </ul>
-        <a class="btn btn-accent" href="https://buy.stripe.com/28EdR90Q06w514t8cgcV201">Start your site</a>
-      </div>
       <div class="price-card rv">
-        <h3>The Full Site</h3>
-        <div class="price-line"><span class="now">$1,299</span><span class="was">$2,499</span></div>
-        <p class="price-was-note">My old price for multi-page custom projects.</p>
-        <p class="best-for"><b>Best for</b>Established speakers with multiple keynotes, media, and a larger story that needs room to breathe.</p>
+        <h3>Website Redesign</h3>
+        <div class="price-line"><span class="now">$2,000</span></div>
+        <p class="price-was-note">50% deposit to start, 50% before launch.</p>
+        <p class="list-label" style="margin-top:0">What's included</p>
         <ul>
-          <li>Everything in the One-Pager</li>
-          <li>Up to 7 pages from the page menu:</li>
-          <li class="soft">Home · About · Speaking · Topics · Book · Consulting · Contact</li>
-          <li>Redirects from your old site preserved</li>
-          <li>One consolidated revision round, all pages</li>
-          <li>Live in 5 business days</li>
+          <li>Full custom-coded redesign, up to 5 pages</li>
+          <li>Migration of your existing content</li>
+          <li>Responsive, mobile-first build</li>
+          <li>Inquiry/contact form</li>
+          <li>Analytics installed, technical SEO fundamentals</li>
+          <li>Domain connection + SSL</li>
+          <li>Two consolidated revision rounds</li>
+          <li>Live in about 7-10 business days after assets are in</li>
+          <li>Hosting included for 12 months</li>
         </ul>
-        <a class="btn btn-outline" href="https://buy.stripe.com/aFa7sLaqA5s13cB504cV202">Start your site</a>
+        <p class="list-label">What's not included, priced separately</p>
+        <ul class="not-included">
+          <li>Extra pages beyond 5</li>
+          <li>Copywriting from scratch, not shaping what you already have</li>
+          <li>Blog migration, CRM, or custom integrations</li>
+          <li>Ongoing SEO campaigns</li>
+        </ul>
+        <a class="btn btn-accent" href="#">See If You're a Fit</a>
+        <a class="btn btn-outline" href="https://buy.stripe.com/14A5kD1U46w5dRfgIMcV204">Skip It, Start My Redesign</a>
+        <p class="deposit-note">Anything in the not-included list triggers a separate quote, never a surprise mid-project.</p>
       </div>
     </div>
     <div class="care-plan rv">
-      <p><b>After launch: the Care Plan.</b> Hosting, domain support, and up to 2 content edits a month. New talk, new testimonial, new headshot, handled for you. First month included with every site.</p>
-      <span class="tag">$25/mo · cancel anytime</span>
+      <p><b>After year one:</b> hosting renews at $149/yr, cancel or take your code elsewhere any time. No ongoing obligation either direction.</p>
+      <span class="tag">$149/yr after month 12</span>
     </div>
   </div>
 </section>
@@ -496,9 +414,9 @@
 <section id="founder">
   <div class="wrap">
     <figure class="note rv">
-      <span class="kicker">Why KeynoteSites</span>
-      <blockquote class="display">"I spent years building custom sites for speakers at custom prices. The design got great. The process stayed slow and expensive. <span>KeynoteSites is that same design, systemized.</span> Fixed price. Fixed timeline. No meetings you don't want."</blockquote>
-      <figcaption><b>Donovan Armstrong</b> · Founder, KeynoteSites</figcaption>
+      <span class="kicker">Why this exists</span>
+      <blockquote class="display">"Most of the speaker sites I get asked to fix aren't badly built. They're just old. <span>Same design judgment I've always brought to this work, now fast enough to do at a fixed price.</span>"</blockquote>
+      <figcaption><b>Donovan Armstrong</b> · Keynote Sites</figcaption>
     </figure>
   </div>
 </section>
@@ -513,55 +431,43 @@
     </div>
     <div class="faq rv">
       <details>
-        <summary>Why is it so much cheaper than an agency?</summary>
-        <p>One-page structure, one proven design system, one revision round, structured intake instead of endless meetings. The parts that make custom projects cost $5,000 are the parts that make them slow. I removed those, not the design quality.</p>
+        <summary>Do I need to do the fit check first?</summary>
+        <p>No, it's optional. It's a short call to confirm this is the right scope for your site before any money changes hands, not a sales pitch. If you already know you want in, skip straight to the deposit.</p>
       </details>
       <details>
-        <summary>When does the 3-day clock start?</summary>
-        <p>When your intake form is complete: bio, talks, photos, video links, domain details. Most speakers finish it in under 30 minutes. If assets trickle in over two weeks, the clock waits with them.</p>
+        <summary>What happens to my current site and hosting?</summary>
+        <p>Your new site replaces it, and redirects are set up so your Google standing carries over. If you're currently paying a monthly platform fee (Wix, Squarespace, etc.), that goes away once you're moved over.</p>
       </details>
       <details>
-        <summary>What counts as the revision round?</summary>
-        <p>One consolidated list of changes after you see the preview. Send everything at once and I make it all. Additional rounds are $75. Layout and design-system changes are custom work, which starts at $1,500 and is usually not what you need.</p>
+        <summary>What counts as a revision round?</summary>
+        <p>One consolidated list of changes per round, two rounds included. Send everything at once and I make it all. Additional rounds are quoted separately.</p>
       </details>
       <details>
-        <summary>Can I edit the site myself later?</summary>
-        <p>Content updates are handled for you: two per month on the Care Plan, or $75 per batch without it. A self-serve content editor is on the roadmap for Care Plan members. What you can't do is break the design at 1am. That's a feature.</p>
-      </details>
-      <details>
-        <summary>I already have a website. What happens to it?</summary>
-        <p>I replace it rather than renovate it. Your existing content actually speeds up the build, and I set up redirects from your old pages so links and Google rankings carry over.</p>
-      </details>
-      <details>
-        <summary>What do you need from me?</summary>
-        <p>About 25 minutes on the intake form: bio, talk descriptions, testimonials, a headshot and speaking photos, video links, and access to point your domain. I shape everything from there.</p>
-      </details>
-      <details>
-        <summary>What's not included?</summary>
-        <p>Logo design, ghostwriting from scratch, blogs, email marketing, and ongoing SEO campaigns. Keeping the box small is what keeps it $499 and 3 days.</p>
+        <summary>What happens after the first year of hosting?</summary>
+        <p>It renews at $149/yr. You can cancel any time and take your code with you, this is never an open-ended obligation on either side.</p>
       </details>
       <details>
         <summary>What's the refund policy?</summary>
-        <p>Full refund any time before you approve your preview. After launch, the build is complete and non-refundable. The Care Plan can be cancelled anytime.</p>
+        <p>Your 50% deposit is fully refundable any time before you approve the preview, no questions asked. Once you approve it, that deposit covers the work already delivered. The remaining 50% is only ever charged once you're happy with the site and it's ready to launch, so you're never billed for something you haven't signed off on.</p>
       </details>
     </div>
   </div>
 </section>
 
 <section class="finale">
-  <span class="kicker">Founding · 5 spots</span>
-  <h2 class="display" style="margin-top:22px">Booked-ready by <span>Friday.</span></h2>
-  <p>Founding price $499 for the first 5 speakers, in exchange for an honest testimonial. Then it's $999.</p>
+  <span class="kicker">Website redesign · $2,000</span>
+  <h2 class="display" style="margin-top:22px">Let's fix <span>this.</span></h2>
+  <p>A full rebuild of the site you already have, custom-coded, off the page builder, live in about 7-10 business days.</p>
   <div class="hero-ctas">
-    <a class="btn btn-accent" href="https://buy.stripe.com/28EdR90Q06w514t8cgcV201">Start your site · $499</a>
-    <a class="btn btn-outline" href="#example">View the example</a>
+    <a class="btn btn-accent" href="#">See If You're a Fit</a>
+    <a class="btn btn-outline" href="https://buy.stripe.com/14A5kD1U46w5dRfgIMcV204">Skip It, Start My Redesign</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-inner">
     <a class="logo" href="#top" style="font-size:16px">KeynoteSites<b>.</b></a>
-    <span>© 2026 KeynoteSites · Websites for professional speakers · hello@keynotesites.com</span>
+    <span>© 2026 Keynote Sites · Website redesigns for professional speakers · hello@keynotesites.com</span>
   </div>
 </footer>
 
@@ -570,38 +476,6 @@
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
-
-  // schematic: cycle the highlight through the site sections while visible
-  const list = document.getElementById('schematic-list');
-  if (list && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const items = [...list.children];
-    let idx = 0, timer = null;
-    const step = () => {
-      items.forEach(li => li.classList.remove('active'));
-      items[idx].classList.add('active');
-      idx = (idx + 1) % items.length;
-    };
-    const vis = new IntersectionObserver(es => {
-      es.forEach(e => {
-        if (e.isIntersecting && !timer) { step(); timer = setInterval(step, 1500); }
-        else if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; }
-      });
-    }, { threshold: 0.3 });
-    vis.observe(list);
-  }
-
-  // scale the live device previews to fit their frames
-  const scaleDevices = () => {
-    document.querySelectorAll('.device-screen iframe').forEach(f => {
-      const w = parseInt(f.dataset.w, 10);
-      const s = f.parentElement.clientWidth / w;
-      f.style.width = w + 'px';
-      f.style.height = f.dataset.h + 'px';
-      f.style.transform = 'scale(' + s + ')';
-    });
-  };
-  scaleDevices();
-  window.addEventListener('resize', scaleDevices);
 </script>
 
 <script>
